@@ -58,3 +58,6 @@
 
 /* Lock screen keyboard text field placeholder */
 "type_some_text" = "Type hier";
+
+/* Can not play video */
+"can_not_play_video" = "Dit is geen geldig videobestand";

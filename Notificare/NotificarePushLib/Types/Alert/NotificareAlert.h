@@ -1,9 +1,9 @@
 //
-//  Alert.h
+//  NotificareAlert.m
 //  NotificarePushLib
 //
-//  Created by Joel Oliveira on 1/24/13.
-//  Copyright (c) 2013 Notificare. All rights reserved.
+//  Created by Joel Oliveira on 10/02/16.
+//  Copyright (c) 2016 Notificare. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

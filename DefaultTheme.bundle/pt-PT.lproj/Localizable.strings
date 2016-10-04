@@ -58,3 +58,6 @@
 
 /* Lock screen keyboard text field placeholder */
 "type_some_text" = "Escreva aqui";
+
+/* Can not play video */
+"can_not_play_video" = "Este não é um ficheiro de vídeo válido";
