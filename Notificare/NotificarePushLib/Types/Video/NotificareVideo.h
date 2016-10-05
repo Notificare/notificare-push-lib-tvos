@@ -18,7 +18,7 @@
 #import "NSString+FromBundle.h"
 #import "UIImage+FromBundle.h"
 
-@interface NotificareVideo : NSObject <NotificationType, UITextViewDelegate>
+@interface NotificareVideo : NSObject <NotificationType>
 
 @property (nonatomic, assign) id<NotificationDelegate> delegate;
 @property (nonatomic, strong) NotificareNotification * notification;

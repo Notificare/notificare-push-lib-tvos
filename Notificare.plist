@@ -14,17 +14,5 @@
 	<true/>
 	<key>RESOURCE_BUNDLE</key>
 	<string>DefaultTheme.bundle</string>
-	<key>OPTIONS</key>
-	<dict>
-		<key>TEXTFIELD_TEXT_COLOR</key>
-		<string>FFFFFF</string>
-		<key>TEXTFIELD_BACKGROUND_COLOR</key>
-		<string>000000</string>
-		<key>URL_SCHEMES</key>
-		<array>
-			<string>demoapp</string>
-			<string>callback</string>
-		</array>
-	</dict>
 </dict>
 </plist>

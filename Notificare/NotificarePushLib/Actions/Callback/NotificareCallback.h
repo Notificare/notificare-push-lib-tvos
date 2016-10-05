@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import <MobileCoreServices/MobileCoreServices.h>
 #import "ActionType.h"
 #import "ActionDelegate.h"
 #import "NotificareAction.h"
@@ -27,7 +26,7 @@
 @property (strong, nonatomic) UIBarButtonItem * closeButton;
 @property (strong, nonatomic) NSString * message;
 @property (strong, nonatomic) UITextField * messageField;
-@property (nonatomic, assign) BOOL withMessage;
+@property (strong, nonatomic) UITextView * messageView;
 @property (strong, nonatomic) UINavigationController *navController;
 @property (strong, nonatomic) UIViewController *controller;
 @property (strong, nonatomic) UIView *baseView;
