@@ -1,8 +1,6 @@
 Changelog
 =========
 
-1.0.0  (2016-10-05)
-- Initial release
+2.0.0-beta  (2018-04-10)
+- Initial beta release
 
-0.0.9  (2016-10-04)
-- Beta testing tvOS features

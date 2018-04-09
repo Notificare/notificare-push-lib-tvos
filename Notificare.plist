@@ -14,5 +14,16 @@
 	<true/>
 	<key>RESOURCE_BUNDLE</key>
 	<string>DefaultTheme.bundle</string>
+	<key>OPTIONS</key>
+	<dict>
+		<key>DISABLE_APP_DELEGATE_PROXY</key>
+		<false/>
+		<key>BUTTONS_TEXT_COLOR</key>
+		<string>000000</string>
+		<key>TEXTFIELD_TEXT_COLOR</key>
+		<string>000000</string>
+		<key>TEXTFIELD_BACKGROUND_COLOR</key>
+		<string>E5E5EA</string>
+	</dict>
 </dict>
 </plist>
