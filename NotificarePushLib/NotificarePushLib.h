@@ -671,6 +671,16 @@ typedef void (^NotificareCompletionBlock)(id _Nullable response , NSError * _Nul
 - (void)logCustomEvent:(NSString *)event withData:(NSDictionary* _Nullable)data completionHandler:(NotificareCompletionBlock)completionBlock;
 
 /*!
+ *  @abstract Log an event
+ *
+ *  @discussion
+ *  Helper method to log a Notificare event
+ *  @param event A NSString representing the event type (please check all macro definitions starting with kNotificareEvent)
+ *  @param data A NSDictionary object containing extraneous data for an event (optional)
+ */
+- (void)logEvent:(NSString *)event withData:(NSDictionary* _Nullable)data completionHandler:(NotificareCompletionBlock)completionBlock;
+
+/*!
  * @abstract Basic request method for Push API
  *
  * @discussion
