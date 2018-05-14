@@ -7,6 +7,14 @@ Guides for setup and implementation can be found here:
 https://docs.notifica.re/sdk/v2/tvos/setup/
 
 
+
+## Initialization
+A few changes were introduces when initializing the library, mainly a new method is required to initialize the library (where you can override Notificare.plist app keys). This creates a clear separation between the moment you initialize our SDK and when you actually want to start using it.
+
+You can find more information about initialization here:
+
+https://docs.notifica.re/sdk/v2/tvos/implementation/ 
+
 ## Device Registration
 
 When you are migrating from older versions, you will notice that you no longer need to take action whenever a device token is registered, as device registration in SDK 2.0 is totally managed by Notificare. You can still register/unregister a device to/from a userID and userName and Notificare will always keep that information cached in the device. This will make sure that whenever a device token changes everything is correctly handled without the need for your app to handle it. 
