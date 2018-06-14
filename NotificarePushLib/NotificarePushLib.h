@@ -116,6 +116,12 @@ typedef void (^NotificareCompletionBlock)(id _Nullable response , NSError * _Nul
  * @param notification A NotificareNotification object containing the notification received
  */
 - (void)notificarePushLib:(NotificarePushLib *)library didReceiveSystemPushInForeground:(NotificareSystemNotification *)notification;
+
+/*!
+ * @brief Optional. This delegate method will be triggered when a remote notification is received from an unrecognizable source.
+ * @param notification A NSDictionary object containing the notification received
+ */
+- (void)notificarePushLib:(NotificarePushLib *)library didReceiveUnknownNotification:(NSDictionary *)notification;
 /*!
  * @brief Optional. This delegate method will be triggered just before the notification opens.
  * @param notification A NotificareNotification object that represents the notification
@@ -400,6 +406,14 @@ typedef void (^NotificareCompletionBlock)(id _Nullable response , NSError * _Nul
  *  @return A Boolean indicating if the user has allowed alerts, badge and sounds
  */
 -(BOOL)allowedUIEnabled;
+/*!
+ *  @abstract Check if Remote Notification is from Notificare
+ *
+ *  @discussion
+ *  Use this method to quickly identify if the a notification is from Notificare
+ *  @return A Boolean indicating if the a notification is from Notificare
+ */
+-(BOOL)isNotificationFromNotificare:(NSDictionary*)userInfo;
 /*!
  *  @abstract The device
  *
