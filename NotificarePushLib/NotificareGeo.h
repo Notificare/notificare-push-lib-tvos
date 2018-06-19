@@ -13,6 +13,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef enum NotificareGeoAuthorizationStatus : NSInteger {
+    NotificareGeoAuthorizationStatusDenied = 0,
+    NotificareGeoAuthorizationStatusRestricted = 1,
+    NotificareGeoAuthorizationStatusNotDetermined = 2,
+    NotificareGeoAuthorizationStatusAuthorizedWhenInUse = 4
+} NotificareGeoAuthorizationStatus;
+
+
 @class NotificareGeo;
 
 @protocol NotificareGeoDelegate <NSObject>
@@ -20,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @optional
 
 - (void)notificareGeo:(NotificareGeo *)notificareGeo didFailToStartLocationServiceWithError:(NSError *)error;
-- (void)notificareGeo:(NotificareGeo *)notificareGeo didReceiveLocationServiceAuthorizationStatus:(NSDictionary *)status;
+- (void)notificareGeo:(NotificareGeo *)notificareGeo didReceiveLocationServiceAuthorizationStatus:(NotificareGeoAuthorizationStatus)status;
 - (void)notificareGeo:(NotificareGeo *)notificareGeo didUpdateLocations:(NSArray<NotificareLocation*> *)locations;
 
 @end
