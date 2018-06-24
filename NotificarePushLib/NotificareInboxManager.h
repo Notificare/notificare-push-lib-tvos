@@ -34,9 +34,16 @@ typedef void (^NotificareInboxCompletionBlock)(id _Nullable response , NSError *
 - (void)launch;
 - (void)reloadInbox;
 - (void)updateInboxItem:(NotificareNotification*)notification;
-- (void)addInboxItem:(NSDictionary*)userInfo;
+- (void)addInboxItem:(NSDictionary*)userInfo completionHandler:(NotificareInboxCompletionBlock)completionBlock;
 - (int)myBadge;
 
+/*!
+ *  @abstract Refresh inbox items
+ *
+ *  @discussion
+ *  Use this method to sync inbox items on-demand. Useful when remote notifications are not implemented.
+ */
+- (void)refresh;
 /*!
  *  @abstract Fetch the inbox items
  *

@@ -109,13 +109,13 @@ typedef void (^NotificareCompletionBlock)(id _Nullable response , NSError * _Nul
  * @brief Optional. This delegate method will be triggered when a system (silent) remote notification is received in the background.
  * @param notification A NotificareNotification object containing the notification received
  */
-- (void)notificarePushLib:(NotificarePushLib *)library didReceiveSystemPushInBackground:(NotificareSystemNotification *)notification;
+- (void)notificarePushLib:(NotificarePushLib *)library didReceiveSystemNotificationInBackground:(NotificareSystemNotification *)notification;
 
 /*!
  * @brief Optional. This delegate method will be triggered when a system (silent) remote notification is received in the foreground.
  * @param notification A NotificareNotification object containing the notification received
  */
-- (void)notificarePushLib:(NotificarePushLib *)library didReceiveSystemPushInForeground:(NotificareSystemNotification *)notification;
+- (void)notificarePushLib:(NotificarePushLib *)library didReceiveSystemNotificationInForeground:(NotificareSystemNotification *)notification;
 
 /*!
  * @brief Optional. This delegate method will be triggered when a remote notification is received from an unrecognizable source.
@@ -410,8 +410,8 @@ typedef void (^NotificareCompletionBlock)(id _Nullable response , NSError * _Nul
  *  @abstract Check if Remote Notification is from Notificare
  *
  *  @discussion
- *  Use this method to quickly identify if the a notification is from Notificare
- *  @return A Boolean indicating if the a notification is from Notificare
+ *  Use this method to quickly identify if a notification is from Notificare
+ *  @return A Boolean indicating if a notification is from Notificare
  */
 -(BOOL)isNotificationFromNotificare:(NSDictionary*)userInfo;
 /*!
