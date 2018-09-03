@@ -36,6 +36,7 @@
 #define kNotificareAppVersion @"notificareAppVersion"
 #define kNotificareDeviceModel @"notificareDeviceModel"
 #define kNotificareDeviceLanguage @"notificareDeviceLanguage"
+#define kNotificareDeviceRegion @"notificareDeviceRegion"
 #define kNotificareDeviceDnD @"notificareDeviceDnD"
 #define kNotificareDeviceUserData @"notificareDeviceUserData"
 #define kNotificareDeviceLatitude @"notificareDeviceLatitude"
