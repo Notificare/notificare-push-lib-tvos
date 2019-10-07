@@ -706,6 +706,14 @@ typedef void (^NotificareCompletionBlock)(id _Nullable response , NSError * _Nul
 -(void)stopLocationUpdates;
 
 /*!
+ *  @abstract Clear Device Location
+ *
+ *  @discussion
+ *  Use this method to manually clear a device's location. This will make sure that any location data stored remotely in our server is deleted from a device.
+ */
+-(void)clearDeviceLocation:(NotificareCompletionBlock)completionBlock;
+
+/*!
  *  @abstract Log a custom event
  *
  *  @discussion

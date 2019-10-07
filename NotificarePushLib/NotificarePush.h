@@ -70,6 +70,7 @@ typedef void (^ErrorReplyBlock)(NSError * error);
 @property (strong, nonatomic) UNUserNotificationCenter * notificationCenter;
 @property (nonatomic,assign) UNAuthorizationOptions authorizationOptions;
 @property (nonatomic,assign) UNNotificationPresentationOptions notificationPresentationOptions;
+@property (nullable, strong, nonatomic) NSDictionary * launchOptions;
 @property (strong, nonatomic) Notificare * notificare;
 @property (strong, nonatomic) NotificareActions * notificareActions;
 
@@ -85,6 +86,7 @@ typedef void (^ErrorReplyBlock)(NSError * error);
 -(void)clearPrivateNotification:(NotificareNotification *)notification completionHandler:(SuccessNotificationBlock)successBlock errorHandler:(ErrorNotificationBlock)errorBlock;
 -(void)reply:(NotificareNotification *)notification forAction:(NotificareAction *)action andData:(NSDictionary * _Nullable)data completionHandler:(SuccessReplyBlock)successBlock errorHandler:(ErrorReplyBlock)errorBlock;
 -(id)notificationController:(NotificareNotification *)notification;
+-(void)handleLaunchOptions;
 
 @end
 
