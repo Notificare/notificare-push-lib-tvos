@@ -1,5 +1,9 @@
 Changelog
 =========
+
+2.2.1 (2019-11-14)
+- Changed Notificare and NotificareActions class delegates to strong references
+
 2.2.0 (2019-10-08)
 - Built for tvOS 13 (Xcode 11 required)
 - Added clearDeviceLocation method and DISABLE_LOCATION_SERVICES plist property

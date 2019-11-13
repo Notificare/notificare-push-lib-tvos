@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NotificareWebView : UIViewController <NotificationType>
 
-@property (nonatomic, assign) id<NotificationDelegate> delegate;
+@property (nonatomic, strong) id<NotificationDelegate> delegate;
 @property (nonatomic, strong) NotificareNotification * notification;
 @property (nonatomic, strong) NotificareActions * notificareActions;
 @property (strong, nonatomic) UITextView *textView;

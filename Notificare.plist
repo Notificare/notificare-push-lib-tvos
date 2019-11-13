@@ -18,6 +18,8 @@
 	<dict>
 		<key>DISABLE_APP_DELEGATE_PROXY</key>
 		<false/>
+		<key>ACTION_BUTTON_TEXT_COLOR</key>
+		<string>FFFFFF</string>
 		<key>BUTTONS_TEXT_COLOR</key>
 		<string>000000</string>
 		<key>TEXTFIELD_TEXT_COLOR</key>
