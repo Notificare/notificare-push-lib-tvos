@@ -6,6 +6,7 @@
 //  Copyright © 2017 Notificare. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "NotificareApplication.h"
 
@@ -24,6 +25,7 @@ typedef void (^ErrorAppInfoBlock)(NSError * response);
 
 +(NotificareAppConfig*)shared;
 -(void)launch;
+-(NSDictionary *)themeForController:(UIViewController *)controller;
 -(void)fetchApplicationInfo:(SuccessAppInfoBlock)successBlock errorHandler:(ErrorAppInfoBlock)errorBlock;
 
 @end

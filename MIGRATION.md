@@ -1,5 +1,51 @@
 # Migration
 
+## From 2.x.x to 2.3.0
+
+When migrating from older version of v2 to 2.3.0 there isn't much you need to take into account. This version is built against tvOS SDK 13.4 and should be used with Xcode 11.5.
+
+### Initialization
+
+There is now one new method that allows you to opt-out a device from Notificare. For those cases where you want to completly remove all data of a device from Notificare, you can use this method as follows:
+
+```
+[[NotificarePushLib shared] unlaunch];
+```
+
+This is basically the opposite of  the  ```launch``` method. Once invoked, all data will be deleted from Notificare and attamept to use any other methods from Notificare will fail. After using this method the only way to start using Notificare again is by invoking:
+
+```
+[[NotificarePushLib shared] launch];
+```
+
+### Remote Notifications
+
+There are not relevant changes on this on remote notifications, other than some overhauling in Inbox functionalities. Although implementation remains exactly the same, the inbox functionality in 2.3.0 introduces new features like visibility and expiration which require absolutely no changes in your implementation. Additionally, inbox items will also include information about the type of notification it was sent. This results in the following new properties added to the NotificareDeviceInbox model:
+
+- type
+- visible
+- expires
+
+It is also worth mentioning that the following delegates:
+
+```
+-(void)notificarePushLib:(NotificarePushLib *)library didLoadInbox:(nonnull NSArray<NotificareDeviceInbox *> *)items{
+
+}
+
+- (void)notificarePushLib:(NotificarePushLib *)library didUpdateBadge:(int)badge{
+  
+}
+```
+
+Will be called more often in this version, namely everytime the app enters in foreground and after invoking any method in this class. If you rely on these (and you probably are), you should take that into account.
+
+### Miscelaneous
+
+This version also includes 2 new objects in the Notificare.plist under OPTIONS. We've added the possibility to configure notification's UI for Light/Dark mode. When present, we will use those instead to apply UI styles. If not present, we will keep using the default properties as in previous versions. 
+
+## From 1.x.x to 2.0.0
+
 If you are migrating from 1.x.x version of our SDK, there are several breaking changes that you will need to take into consideration. A considerable part of the API in version 1 was removed and replaced with a simplified new API that unifies integration of remote notifications, location services, contextual content and analytics for tvOS 10 and up.
 
 Guides for setup and implementation can be found here:

@@ -26,6 +26,24 @@
 		<string>000000</string>
 		<key>TEXTFIELD_BACKGROUND_COLOR</key>
 		<string>E5E5EA</string>
+		<key>LIGHT_MODE</key>
+		<dict>
+			<key>BUTTONS_TEXT_COLOR</key>
+			<string>000000</string>
+			<key>TEXTFIELD_TEXT_COLOR</key>
+			<string>FFFFFF</string>
+			<key>TEXTFIELD_BACKGROUND_COLOR</key>
+			<string>000000</string>
+		</dict>
+		<key>DARK_MODE</key>
+		<dict>
+			<key>BUTTONS_TEXT_COLOR</key>
+			<string>000000</string>
+			<key>TEXTFIELD_TEXT_COLOR</key>
+			<string>FFFFFF</string>
+			<key>TEXTFIELD_BACKGROUND_COLOR</key>
+			<string>000000</string>
+		</dict>
 	</dict>
 </dict>
 </plist>

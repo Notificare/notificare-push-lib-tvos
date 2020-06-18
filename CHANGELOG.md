@@ -1,5 +1,13 @@
 Changelog
 =========
+2.3.0 (2020-06-18)
+- Added new unlaunch method
+- Added possibility to send notification not shown in the inbox
+- Added possibility to expire inbox items
+- Added new property type in NotificareDeviceInbox model
+- Added new properties in Notificare.plist under OPTIONS for Light/Dark mode
+- Minor bug fixes and improvements
+- Built against tvOS 13.4 SDK
 
 2.2.1 (2019-11-14)
 - Changed Notificare and NotificareActions class delegates to strong references

@@ -354,7 +354,13 @@ typedef void (^NotificareCompletionBlock)(id _Nullable response , NSError * _Nul
  *  Launches the NotificarePushLib with the initialized coniguration. This method should be invoked whenever you want to start using the library. In response to this method the onReady delegate will be triggered.
  */
 - (void)launch;
-
+/*!
+ *  @abstract Destroy Setup
+ *
+ *  @discussion
+ *  Destroys an initialized NotificarePushLib instances. This method should be invoked whenever you want to stop using the library. It will unregister a device, stop location services and reset Notificare to its pre-launch state.
+ */
+- (void)unlaunch;
 /*!
  *  @abstract The App
  *  @property application

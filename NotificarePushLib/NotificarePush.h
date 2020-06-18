@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <UserNotifications/UserNotifications.h>
-#import <MobileCoreServices/MobileCoreServices.h>
 #import "Notificare.h"
 #import "NotificareActions.h"
 #import "NotificareNotification.h"
