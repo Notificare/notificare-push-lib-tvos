@@ -1,5 +1,13 @@
 Changelog
 =========
+2.4.0 (2020-09-22)
+- Built with Xcode 12 GM seed
+- Added support for Universal Links
+- Added target content identifier to notification model
+- Use notification title (when present) in UIAlertController or UIViewController instead of app name
+- Added new events for unknown notifications in background and foreground
+- Added markAllAsRead in InboxManager
+
 2.3.0 (2020-06-18)
 - Added new unlaunch method
 - Added possibility to send notification not shown in the inbox

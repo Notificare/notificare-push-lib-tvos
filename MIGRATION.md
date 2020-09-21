@@ -1,5 +1,70 @@
 # Migration
 
+## From 2.3.x to 2.4.0
+
+When migrating from 2.3.0 you should use Xcode 12 with support for tvOS 14. There are few changes to take into account but some adjustments are needed to fully support this new version.
+
+### Remote Notifications
+We've made some changes in how you can receive data from notifications sent from unknown sources. More specifically, you will now have two new delegates:
+
+```
+- (void)notificarePushLib:(NotificarePushLib *)library didReceiveUnknownNotificationInBackground:(NSDictionary *)notification;
+
+- (void)notificarePushLib:(NotificarePushLib *)library didReceiveUnknownNotificationInForeground:(NSDictionary *)notification;
+```
+These will be triggered accordingly when users receive remote or local notifications from unknown sources.
+
+### Inbox
+A new method is now available to allow you to mark all inbox items as read with a single operation:
+
+```
+[[[NotificarePushLib shared] inboxManager] markAllAsRead:^(id  _Nullable response, NSError * _Nullable error) {
+
+}];
+```
+
+### Universal Links
+In this version we will also provide support for universal links. These are links you create in our dashboard that allow you to deep link to certain areas of your app from web pages or email and SMS messages. When using the App Delegate Proxy, these will be automatically handled for you as long as you add the Associated Domains capability with the following entry:
+
+```
+applinks:YOUR_PREFIX.ntc.re
+```
+
+Then if all Links of type ```dynamic links``` you create will trigger the usual delegate where you handle all the deep links for your app (when clicked from web pages or email and SMS messages):
+
+```
+-(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+    [[NotificarePushLib shared]  handleOpenURL:url withOptions:options];
+    // Handle the deep links 
+    
+    return YES;
+}
+```
+
+If you are not using the App Delegate Proxy, you will also need to implement the following delegate and corresponding helper method:
+
+```
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler{
+    [[NotificarePushLib shared] continueUserActivity:userActivity restorationHandler:restorationHandler];
+}
+```
+
+For apps using UIScene or SwiftUI the following method is needed (independently if you use App Delegate Proxy or not) instead:
+
+```
+- (void)scene:(UIScene *)scene continueUserActivity:(NSUserActivity *)userActivity{
+    [[NotificarePushLib shared] continueUserActivity:userActivity];
+}
+```
+
+Finally you can also retrieve the underlying URL Scheme added to a Dynamic Link by using the method:
+
+```
+[[NotificarePushLib shared] fetchLink:YOUR_NS_URL completionHandler:^(id  _Nullable response, NSError * _Nullable error) {
+    // Response will be a NSURL containing the iOS URL added to the Dynamic Link
+}];
+```
+
 ## From 2.x.x to 2.3.0
 
 When migrating from older version of v2 to 2.3.0 there isn't much you need to take into account. This version is built against tvOS SDK 13.4 and should be used with Xcode 11.5.

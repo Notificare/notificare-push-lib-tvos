@@ -126,6 +126,19 @@ typedef void (^NotificareCompletionBlock)(id _Nullable response , NSError * _Nul
  * @param notification A NSDictionary object containing the notification received
  */
 - (void)notificarePushLib:(NotificarePushLib *)library didReceiveUnknownNotification:(NSDictionary *)notification;
+
+/*!
+ * @brief Optional. This delegate method will be triggered when a remote or local notification is opened from an unrecognizable source while in background.
+ * @param notification A NSDictionary object containing the notification received
+ */
+- (void)notificarePushLib:(NotificarePushLib *)library didReceiveUnknownNotificationInBackground:(NSDictionary *)notification;
+
+/*!
+ * @brief Optional. This delegate method will be triggered when a remote or local notification is opened from an unrecognizable source while in foreground.
+ * @param notification A NSDictionary object containing the notification received
+ */
+- (void)notificarePushLib:(NotificarePushLib *)library didReceiveUnknownNotificationInForeground:(NSDictionary *)notification;
+
 /*!
  * @brief Optional. This delegate method will be triggered just before the notification opens.
  * @param notification A NotificareNotification object that represents the notification
@@ -393,6 +406,36 @@ typedef void (^NotificareCompletionBlock)(id _Nullable response , NSError * _Nul
  */
 -(void)handleOpenURL:(NSURL *)url withOptions:(NSDictionary * _Nullable)options;
 
+/*!
+ *  @abstract Handle User Activity
+ *  @property userActivity
+ *  @property restorationHandler
+ *
+ *  @discussion
+ *  Handles additional functionality in response to UIApplication's continueUserActivity:restorationHandler. Should be used in -(BOOL)application:continueUserActivity:restorationHandler:
+ *
+ */
+-(void)continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler;
+
+/*!
+ *  @abstract Handle User Activity
+ *  @property userActivity
+ *
+ *  @discussion
+ *  Handles additional functionality in response to UIScene's continueUserActivity. Should be used in -(void)scene:(UIScene *)scene continueUserActivity:(NSUserActivity *)userActivity
+ *
+ */
+-(void)continueUserActivity:(NSUserActivity *)userActivity;
+
+/*!
+ *  @abstract Fetch a Link
+ *
+ *  @discussion
+ *  Use this method to fetch the underlying URL for a Dynamic Link created in Notificare via the Links feature. Usually in response to -(BOOL)application:continueUserActivity:restorationHandler: or  -(void)scene:(UIScene *)scene continueUserActivity:(NSUserActivity *)userActivity
+ *  @param url  A NSURL representing the URL of the Dynamic Link.
+ *
+ */
+-(void)fetchLink:(NSURL *)url completionHandler:(NotificareCompletionBlock)completionBlock;
 /*!
  *  @abstract Register For Notifications
  *

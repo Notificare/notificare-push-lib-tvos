@@ -38,6 +38,10 @@ typedef void (^ErrorReplyBlock)(NSError * error);
 
 - (void)notificarePush:(NotificarePush *)notificarePush didReceiveUnknownNotification:(NSDictionary *)notification;
 
+- (void)notificarePush:(NotificarePush *)notificarePush didReceiveUnknownNotificationInBackground:(NSDictionary *)notification;
+
+- (void)notificarePush:(NotificarePush *)notificarePush didReceiveUnknownNotificationInForeground:(NSDictionary *)notification;
+
 - (void)notificarePush:(NotificarePush *)notificarePush willOpenNotification:(NotificareNotification *)notification;
 
 - (void)notificarePush:(NotificarePush *)notificarePush didOpenNotification:(NotificareNotification *)notification;

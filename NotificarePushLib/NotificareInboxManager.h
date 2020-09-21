@@ -76,7 +76,13 @@ typedef void (^NotificareInboxCompletionBlock)(id _Nullable response , NSError *
  *  @param inboxItem A NotificareDeviceInbox object
  */
 - (void)markAsRead:(NotificareDeviceInbox *)inboxItem completionHandler:(NotificareInboxCompletionBlock)completionBlock;
-
+/*!
+ *  @abstract Mark All Inbox Items as read
+ *
+ *  @discussion
+ *  Mark all inbox items as read
+ */
+- (void)markAllAsRead:(NotificareInboxCompletionBlock)completionBlock;
 /*!
  *  @abstract Remove All Notifications from Inbox
  *
