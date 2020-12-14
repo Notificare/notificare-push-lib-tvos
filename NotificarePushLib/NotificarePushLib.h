@@ -838,6 +838,15 @@ typedef void (^NotificareCompletionBlock)(id _Nullable response , NSError * _Nul
  */
 - (void)didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo completionHandler:(NotificareCompletionBlock)completionBlock;
 
+/*!
+ * @abstract Handle willPresentNotification method
+ *
+ * @discussion
+ * When the User Notification Center delegate is disabled this method must be implemented in order to handle a notification while the app is in foreground. Must be used in the delegate method userNotificationCenter:willPresentNotification:withCompletionHandler:
+ * @param notification The UNNotification object provided by the app delegate method
+ */
+-(void)willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler;
+
 @end
 
 NS_ASSUME_NONNULL_END

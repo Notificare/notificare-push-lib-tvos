@@ -90,6 +90,7 @@ typedef void (^ErrorReplyBlock)(NSError * error);
 -(void)reply:(NotificareNotification *)notification forAction:(NotificareAction *)action andData:(NSDictionary * _Nullable)data completionHandler:(SuccessReplyBlock)successBlock errorHandler:(ErrorReplyBlock)errorBlock;
 -(id)notificationController:(NotificareNotification *)notification;
 -(void)handleLaunchOptions;
+-(void)willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler;
 
 @end
 
