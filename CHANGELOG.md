@@ -1,5 +1,8 @@
 Changelog
 =========
+2.5.0 (2020-12-17)
+- Built with Xcode 12.3 with support for tvOS 14.3
+
 2.5-beta1 (2020-12-14)
 - Built with Xcode 12.2 with support for tvOS 14.2
 - Added alternative methods for a non-managed UNUserNotificationCenter
